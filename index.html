@@ -67,15 +67,18 @@
   </style>
 </head>
 <body>
-  <nav style="margin-left: 30px; margin-right: 30px;">
-    <a href="#welcome">Welcome</a>
-    <a href="#schedule">Schedule</a>
-    <a href="#menu">Menu</a>
-    <a href="#music">Music</a>
-    <a href="#gifts">Gifts</a>
-    <a href="#getting-here">Getting Here</a>
-    <a href="#floorplan">Floorplan</a>
-    <a href="#thank you">Thank You</a>
+  <nav style="margin: 1rem 30px; text-align: center;">
+    <select id="nav-dropdown" onchange="location.href=this.value;" style="padding: 0.5rem; border-radius: 8px; font-family: 'PapyrusAlt', 'Papyrus', 'Fantasy', sans-serif;">
+      <option value="">-- Select Section --</option>
+      <option value="#welcome">Welcome</option>
+      <option value="#schedule">Schedule</option>
+      <option value="#menu">Menu</option>
+      <option value="#music">Music</option>
+      <option value="#gifts">Gifts</option>
+      <option value="#getting-here">Getting Here</option>
+      <option value="#floorplan">Floorplan</option>
+      <option value="#thank you">Thank You</option>
+    </select>
   </nav>
 
   <section id="welcome" style="text-align: center;">
