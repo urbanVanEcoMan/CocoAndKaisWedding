@@ -3,19 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap" rel="stylesheet">  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coco and Kai's</title>
   <style>
-    @font-face {
-      font-family: 'PapyrusAlt';
-      src: url('/fonts/PapyrusAlt.woff2') format('woff2'),
-          url('/fonts/PapyrusAlt.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
     body {
       margin: 0;
-      font-family: 'PapyrusAlt', 'Papyrus', 'Fantasy', sans-serif;
+      font-family: "Mystery Quest", 'Papyrus', 'Fantasy', sans-serif;
       background: radial-gradient(circle, #b8a95a 0%, #ffd394 100%);
       color: #333;
     }
@@ -68,7 +64,7 @@
 </head>
 <body>
   <nav style="margin: 1rem 30px; text-align: center;">
-    <select id="nav-dropdown" onchange="location.href=this.value;" style="padding: 0.5rem; border-radius: 8px; font-family: 'PapyrusAlt', 'Papyrus', 'Fantasy', sans-serif;">
+    <select id="nav-dropdown" onchange="location.href=this.value;" style="padding: 0.5rem; border-radius: 8px; font-family: 'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;">
       <option value="">-- Select Section --</option>
       <option value="#welcome">Welcome</option>
       <option value="#schedule">Schedule</option>
@@ -83,11 +79,11 @@
 
   <section id="welcome" style="text-align: center;">
     <img src="./welcome.png" alt="Welcome Image">
-    <p>We're so excited to celebrate our special day with you! Thank you for being a part of our journey</p>
     <p id="timer"></p>
+    <p>We're so excited to celebrate our special day with you! Thank you for being a part of our journey</p>
   </section>
 
-  <section id="schedule" style="position: relative; text-align: center; font-family: 'PapyrusAlt', 'Papyrus', 'Fantasy', sans-serif;">
+  <section id="schedule" style="position: relative; text-align: center; font-family: 'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;">
     <!-- Image with centered button -->
     <div style="position:relative; display: inline-block;">
       <img src="./base.png" alt="Schedule image" style="display: block;">
@@ -100,7 +96,7 @@
                     transform: translate(-50%, -50%); 
                     padding: 12px 24px; 
                     font-size: 18px;
-                    font-family:  'PapyrusAlt', 'Papyrus', 'Fantasy', sans-serif;
+                    font-family:  'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;
                     font-weight: bold;
                     border-radius: 8px; 
                     border: none; 
@@ -128,7 +124,7 @@
       max-width: 500px;
       z-index: 1000;
       min-height: 250px;
-      font-family:  'PapyrusAlt', 'Papyrus', 'Fantasy', sans-serif;
+      font-family:  'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;
       backdrop-filter: blur(2px);
     ">
       <h2 style="margin-top: 0; font-size: 28px;">Schedule</h2>
@@ -160,7 +156,7 @@
                     background-color: #333; 
                     color: #fff; 
                     cursor: pointer;
-                    font-family: 'PapyrusAlt', 'Papyrus', 'Fantasy', sans-serif;
+                    font-family: 'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;
                     font-size: 16px;">
         Close
       </button>
