@@ -6,14 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coco and Kai's</title>
   <style>
+    @font-face {
+      font-family: 'PapyrusAlt';
+      src: url('/fonts/PapyrusAlt.woff2') format('woff2'),
+          url('/fonts/PapyrusAlt.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
     body {
       margin: 0;
-      font-family:  "Papyrus", "Andale Mono", "Amatic SC", "Copperplate", "Trebuchet MS", sans-serif;
-      background: radial-gradient(circle, rgba(143, 255, 158, 1) 0%, rgba(235, 152, 199, 1) 100%);
+      font-family: 'PapyrusAlt', 'Papyrus', 'Fantasy', sans-serif;
+      background: radial-gradient(circle, #b8a95a 0%, #ffd394 100%);
       color: #333;
     }
     header {
-      background-color: rgba(235, 152, 199, 0.8);
+      background-color: #ffb5ef;
       padding: 1rem;
       text-align: center;
       font-size: 2.5rem;
@@ -26,11 +33,12 @@
       justify-content: center;
       gap: 1rem;
       padding: 1rem;
-      background-color: rgba(143, 255, 158, 0.6);
+      background-color: #ffb5ef;
       position: sticky;
       top: 0;
       flex-wrap: wrap;
       text-wrap:inherit;
+      z-index: 1000; /* <-- Add this */
     }
     nav a {
       text-decoration: none;
@@ -67,6 +75,7 @@
     <a href="#gifts">Gifts</a>
     <a href="#getting-here">Getting Here</a>
     <a href="#floorplan">Floorplan</a>
+    <a href="#thank you">Thank You</a>
   </nav>
 
   <section id="welcome" style="text-align: center;">
@@ -75,20 +84,20 @@
     <p id="timer"></p>
   </section>
 
-  <section id="schedule" style="position: relative; text-align: center; font-family: 'Papyrus', 'Andale Mono', 'Amatic SC', 'Copperplate', 'Trebuchet MS', sans-serif;">
+  <section id="schedule" style="position: relative; text-align: center; font-family: 'PapyrusAlt', 'Papyrus', 'Fantasy', sans-serif;">
     <!-- Image with centered button -->
-    <div style="position: relative; display: inline-block;">
+    <div style="position:relative; display: inline-block;">
       <img src="./base.png" alt="Schedule image" style="display: block;">
       
       <!-- Button centered on the image -->
       <button onclick="toggleSchedulePopup()" 
-              style="position: absolute; 
+              style="position: absolute;
                     top: 50%; 
                     left: 50%; 
                     transform: translate(-50%, -50%); 
                     padding: 12px 24px; 
                     font-size: 18px;
-                    font-family: 'Papyrus', 'Andale Mono', 'Amatic SC', 'Copperplate', 'Trebuchet MS', sans-serif;
+                    font-family:  'PapyrusAlt', 'Papyrus', 'Fantasy', sans-serif;
                     font-weight: bold;
                     border-radius: 8px; 
                     border: none; 
@@ -116,11 +125,11 @@
       max-width: 500px;
       z-index: 1000;
       min-height: 250px;
-      font-family: 'Papyrus', 'Andale Mono', 'Amatic SC', 'Copperplate', 'Trebuchet MS', sans-serif;
+      font-family:  'PapyrusAlt', 'Papyrus', 'Fantasy', sans-serif;
       backdrop-filter: blur(2px);
     ">
       <h2 style="margin-top: 0; font-size: 28px;">Schedule</h2>
-      <h3 style="font-size: 22px; margin-bottom: 8px;">Day 1 (Friday 4th)</h3>
+      <h3 style="font-size: 22px; margin-bottom: 8px;">Day 1</h3>
       <div style="margin-top: 0; padding-left: 0; list-style: none;">
         <div style="margin-bottom: 6px;">4:00 PM - Earliest Arriving</div>
         <div style="margin-bottom: 6px;">Pizza</div>
@@ -148,7 +157,7 @@
                     background-color: #333; 
                     color: #fff; 
                     cursor: pointer;
-                    font-family: 'Papyrus', 'Andale Mono', 'Amatic SC', 'Copperplate', 'Trebuchet MS', sans-serif;
+                    font-family: 'PapyrusAlt', 'Papyrus', 'Fantasy', sans-serif;
                     font-size: 16px;">
         Close
       </button>
@@ -180,7 +189,8 @@
 
   <section id="gifts" style="text-align: center;">
     <h2>Gifts</h2>
-    <p>If you'd like to make a gift, then ask Coco or Kai for more information :)</p>
+    <p>Kai and Coco are really looking forward to seeing you and you being a part of our wedding festival truly is heart-nourishing 💛. For those who are thinking of a gift for us, because they would like to give a gift, we would love to receive gifts of experience — whether that's something we can enjoy together, or something you would like to be part of with us. Experiences and memories are what we want to collect and will treasure! Alternatively, if you would prefer to make a financial contribution towards our honeymoon adventure, we would very happily receive that gift. I have included our bank details in the chat description. Please know that there is absolutely no expectation or need for you to give a gift — your support, love, and being present at our Wedding Festival is the greatest gift of all 💛 We can't wait to share this special day with you!
+</p>
   </section>
 
   <section id="getting-here" style="text-align: center;">
@@ -229,6 +239,11 @@
     <img src="./floorplan.png" alt="Floorplan Image">
     <p>Here's a layout of the venue to help you navigate the space</p>
   </section>
+
+  <section id="thank you" style="text-align: center;">
+    <h2>Thank you!</h2>
+    <p></p>
+  </section>
 </body>
 <script>
   // Set the date we're counting down to
@@ -250,7 +265,7 @@
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="timer"
-  document.getElementById("timer").innerHTML = "Countdown! </br>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+  document.getElementById("timer").innerHTML = "<div style='font-size: 2.5rem;font-weight: bold;'> Countdown! <div> <div>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s </div>";
 
   // If the count down is finished, write some text
   if (distance < 0) {
