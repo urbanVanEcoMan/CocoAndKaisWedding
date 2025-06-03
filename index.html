@@ -16,12 +16,13 @@
       color: #333;
     }
     header {
-      background-color: #ffb5ef;
+      background-color: #888036;
       padding: 1rem;
       text-align: center;
       font-size: 2.5rem;
       font-weight: bold;
       color: #fff;
+      opacity: 0.8;
     }
     nav {
       display: flex;
@@ -29,12 +30,13 @@
       justify-content: center;
       gap: 1rem;
       padding: 1rem;
-      background-color: #ffb5ef;
+      background-color: #888036;
       position: sticky;
       top: 0;
       flex-wrap: wrap;
       text-wrap:inherit;
       z-index: 1000; /* <-- Add this */
+      opacity: 0.8;
     }
     nav a {
       text-decoration: none;
@@ -80,7 +82,7 @@
   <section id="welcome" style="text-align: center;">
     <img src="./welcome.png" alt="Welcome Image">
     <p id="timer"></p>
-    <p>We're so excited to celebrate our special day with you! Thank you for being a part of our journey</p>
+    <p>We’re so excited to celebrate our special day with you! Thank you for being a part of this adventure with us</p>
   </section>
 
   <section id="schedule" style="position: relative; text-align: center; font-family: 'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;">
@@ -130,23 +132,27 @@
       <h2 style="margin-top: 0; font-size: 28px;">Schedule</h2>
       <h3 style="font-size: 22px; margin-bottom: 8px;">Day 1</h3>
       <div style="margin-top: 0; padding-left: 0; list-style: none;">
-        <div style="margin-bottom: 6px;">4:00 PM - Earliest Arriving</div>
-        <div style="margin-bottom: 6px;">Pizza</div>
+        <div style="margin-bottom: 6px;">Arrivals from 4pm onwards</div>
+        <div style="margin-bottom: 6px;">Activities: welcome, settling in, & baby picture ice-breaker</div>
+        <div style="margin-bottom: 6px;">Dinner @ 7pm</div>
+        <div style="margin-bottom: 6px;">Campfire + hot chocolate</div>
       </div>
       <h3 style="font-size: 22px; margin-bottom: 8px;">Day 2</h3>
       <div style="margin-top: 0; padding-left: 0; list-style: none;">
-        <div style="margin-bottom: 6px;">Breakfast</div>
-        <div style="margin-bottom: 6px;">Activities</div>
-        <div style="margin-bottom: 6px;">Lunch</div>
-        <div style="margin-bottom: 6px;">Ceremony</div>
-        <div style="margin-bottom: 6px;">Drinks</div>
-        <div style="margin-bottom: 6px;">Activities</div>
-        <div style="margin-bottom: 6px;">Food</div>
-        <div style="margin-bottom: 6px;">Music</div>
+        <div style="margin-bottom: 6px;">Breakfast: self-catered</div>
+        <div style="margin-bottom: 6px;">Activities: face painting, care for the earth, site tour, temporary tattoos, slacklining, wishes with flowers</div>
+        <div style="margin-bottom: 6px;">Lunch @ 1pm</div>
+        <div style="margin-bottom: 6px;">Wedding Ceremony @ 3pm</div>
+        <div style="margin-bottom: 6px;">Drinks - Prosecco</div>
+        <div style="margin-bottom: 6px;">Dinner @ 7pm</div>
+        <div style="margin-bottom: 6px;">Dessert - Cupcakes</div>
+        <div style="margin-bottom: 6px;">Party! Outdoors till 10:30pm; Indoors till midnight</div>
       </div>
       <h3 style="font-size: 22px; margin-bottom: 8px;">Day 3</h3>
       <div style="margin-top: 0; padding-left: 0; list-style: none;">
-        <div style="margin-bottom: 6px;">11:00 AM - Latest Leaving</div>
+        <div style="margin-bottom: 6px;">Breakfast: self-catered</div>
+        <div style="margin-bottom: 6px;">Rooms vacated by 10am</div>
+        <div style="margin-bottom: 6px;">Departure by 11am (cars parked onsite until 2pm)</div>
       </div>
       <button onclick="toggleSchedulePopup()" 
               style="margin-top: 20px; 
@@ -165,7 +171,43 @@
 
   <section id="menu" style="text-align: center;">
     <h2>Menu</h2>
-    <p>We will be serving a delicious selection of dishes including vegetarian and gluten-free options. Stay tuned for the final menu!</p>
+    <button id="menu-toggle" style="
+      background: #f8e8d0;
+      border: 2px solid #d4a373;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 15px 0;
+      font-family: 'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;
+      transition: all 0.3s ease;
+    ">
+      🍽️ Click To Check Out Menu!
+    </button>
+
+    <div id="menu-items" style="display: none; text-align: left; max-width: 500px; margin: 0 auto;">
+      <h3>Friday</h3>
+      <ul>
+        <h3>Dinner</h3>
+        <li>Margarita Pizza (with additional toppings), garlic bread, and brownies with ice-cream</li>
+      </ul>
+
+      <h3>Saturday</h3>
+      <ul>
+        <h3>Breakfast</h3>
+        <li>Self-catered, with a selection of communal offerings such as fruits (apples, bananas, strawberries, raspberries), yoghurt (dairy and non-dairy), granola, wholemeal bread, raspberry jam, chunky peanut butter, butter (dairy and non-dairy)</li>
+        <h3>Lunch</h3>
+        <li>Tacos and salad</li>
+        <h3>Dinner</h3>
+        <li>Couscous Salad and cupcakes</li>
+      </ul>
+
+      <h3>Sunday</h3>
+      <ul>
+        <h3>Breakfast</h3>
+        <li>Self-catered, with a selection of communal offerings</li>
+      </ul>
+    </div>
   </section>
 
   <section id="music" style="text-align: center;">
@@ -188,8 +230,22 @@
 
   <section id="gifts" style="text-align: center;">
     <h2>Gifts</h2>
-    <p>Kai and Coco are really looking forward to seeing you and you being a part of our wedding festival truly is heart-nourishing 💛. For those who are thinking of a gift for us, because they would like to give a gift, we would love to receive gifts of experience — whether that's something we can enjoy together, or something you would like to be part of with us. Experiences and memories are what we want to collect and will treasure! Alternatively, if you would prefer to make a financial contribution towards our honeymoon adventure, we would very happily receive that gift. I have included our bank details in the chat description. Please know that there is absolutely no expectation or need for you to give a gift — your support, love, and being present at our Wedding Festival is the greatest gift of all 💛 We can't wait to share this special day with you!
-</p>
+    
+    <p>We are really looking forward to you being a part of our Wedding Festival 💛. Your presence is the best present of all!</p>
+
+    <p>
+      However, if you are insistent on giving a gift (in addition to your presence!), we would love to receive <strong>gifts of experience</strong>. Experiences and memories are what we want to collect and treasure!  
+    </p>
+
+    <p>
+      If you would prefer to make a financial contribution, we would happily receive support towards our <strong>honeymoon in Ireland</strong>. Please get in touch with us for our bank details.  
+    </p>
+
+    <p>
+      Please know that there is <strong>absolutely no expectation</strong> or need for you to give a gift — your support, love, and being present at our Wedding Festival is the greatest gift of all 💛  
+    </p>
+
+    <p>We can't wait to share these special days with you!</p>
   </section>
 
   <section id="getting-here" style="text-align: center;">
@@ -233,13 +289,25 @@
 
   <section id="floorplan" style="text-align: center;">
     <h2>Floorplan</h2>
+    <p>Here’s a layout of the main building</p>
     <img src="./floorplan.png" alt="Floorplan Image">
-    <p>Here's a layout of the venue to help you navigate the space</p>
   </section>
 
-  <section id="thank you" style="text-align: center;">
-    <h2>Thank you!</h2>
-    <p></p>
+  <section id="thank-you" style="text-align: center;">
+    <h2>Thank You!</h2>
+    <p>We want to say a big thank you to a few people who have helped behind the scenes to make this Wedding Festival extra special:</p>
+
+    <p>
+      <strong>Louise Mogridge</strong> from <a href="https://www.instagram.com/treetopsblooms/" target="_blank" rel="noopener noreferrer">Treetop Blooms</a> for the beautiful flowers.<br>
+      <strong>Ray and Julie</strong> for the tacos (Saturday’s lunch) and the Pimm's.<br>
+      <strong>Jobs</strong> for Coco’s wedding dress, the homemade pink elderflower cordial, and granola.<br>
+      <strong>Jacob</strong> for the pizza (Friday’s dinner) and the Prosecco.
+    </p>
+
+    <p>
+      <strong>Jobs, Nomi, Minouche, Robijn, and Sarai</strong> for their help with creating the overskirt and cloak of Coco’s wedding dress.<br>
+      <strong>Alison and Gyles</strong> from <strong>NaturesBase</strong> for welcoming us in their beautiful corner of Wales.
+    </p>
   </section>
 </body>
 <script>
@@ -280,5 +348,23 @@
       popup.style.display = 'block';
     }
   }
+</script>
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    const menuItems = document.getElementById('menu-items');
+    const button = this;
+    
+    if (menuItems.style.display === 'none') {
+      menuItems.style.display = 'block';
+      button.textContent = '▲ Hide Menu';
+      button.style.background = '#d4a373';
+      button.style.color = 'white';
+    } else {
+      menuItems.style.display = 'none';
+      button.textContent = '🍽️ Click To Check Out Menu!';
+      button.style.background = '#f8e8d0';
+      button.style.color = 'inherit';
+    }
+  });
 </script>
 </html>
