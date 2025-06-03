@@ -85,105 +85,70 @@
     <p>We’re so excited to celebrate our special day with you! Thank you for being a part of this adventure with us</p>
   </section>
 
-  <section id="schedule" style="position: relative; text-align: center; font-family: 'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;">
-    <!-- Image with centered button -->
-    <div style="position:relative; display: inline-block;">
-      <img src="./base.png" alt="Schedule image" style="display: block;">
-      
-      <!-- Button centered on the image -->
-      <button onclick="toggleSchedulePopup()" 
-              style="position: absolute;
-                    top: 50%; 
-                    left: 50%; 
-                    transform: translate(-50%, -50%); 
-                    padding: 12px 24px; 
-                    font-size: 18px;
-                    font-family:  'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;
-                    font-weight: bold;
-                    border-radius: 8px; 
-                    border: none; 
-                    background-color: #ffb5ef; 
-                    color: #000; 
-                    cursor: pointer;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-        Press to View the Schedule!
+  <section id="schedule" style="position: relative; text-align: center; font-family: 'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif; background-image: url('./base.png'); background-size: cover; background-position: center; padding: 40px 20px; color: #000;">
+    <div style="background-color: rgba(248, 232, 208, 0.8); border-radius: 15px; padding: 20px; max-width: 600px; margin: 0 auto; border: 2px solid #d4a373;">
+      <h2 style="margin-top: 0;">Schedule</h2>
+      <button id="schedule-toggle" style="
+        background: #f8e8d0;
+        border: 2px solid #d4a373;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 15px 0;
+        font-family: 'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;
+        transition: all 0.3s ease;
+        ">
+        🍽️ Click To See Schedule!
       </button>
-    </div>
 
-    <!-- Schedule Popup -->
-    <div id="schedulePopup" style="
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(255, 255, 255, 0.98);
-      color: #000;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.3);
-      width: 90%;
-      max-width: 500px;
-      z-index: 1000;
-      min-height: 250px;
-      font-family:  'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;
-      backdrop-filter: blur(2px);
-    ">
-      <h2 style="margin-top: 0; font-size: 28px;">Schedule</h2>
-      <h3 style="font-size: 22px; margin-bottom: 8px;">Day 1</h3>
-      <div style="margin-top: 0; padding-left: 0; list-style: none;">
-        <div style="margin-bottom: 6px;">Arrivals from 4pm onwards</div>
-        <div style="margin-bottom: 6px;">Activities: welcome, settling in, & baby picture ice-breaker</div>
-        <div style="margin-bottom: 6px;">Dinner @ 7pm</div>
-        <div style="margin-bottom: 6px;">Campfire + hot chocolate</div>
+      <div id="schedule-items" style="display: none; text-align: left; max-width: 500px; margin: 0 auto;">
+        <h3 style="font-size: 22px; margin-bottom: 8px;">Day 1</h3>
+        <ul style="margin-top: 0; padding-left: 20px;">
+          <li style="margin-bottom: 6px;">Arrivals from 4pm onwards</li>
+          <li style="margin-bottom: 6px;">Activities: welcome, settling in, & baby picture ice-breaker</li>
+          <li style="margin-bottom: 6px;">Dinner @ 7pm</li>
+          <li style="margin-bottom: 6px;">Campfire + hot chocolate</li>
+        </ul>
+
+        <h3 style="font-size: 22px; margin-bottom: 8px;">Day 2</h3>
+        <ul style="margin-top: 0; padding-left: 20px;">
+          <li style="margin-bottom: 6px;">Breakfast: self-catered</li>
+          <li style="margin-bottom: 6px;">Activities: face painting, care for the earth, site tour, temporary tattoos, slacklining, wishes with flowers</li>
+          <li style="margin-bottom: 6px;">Lunch @ 1pm</li>
+          <li style="margin-bottom: 6px;">Wedding Ceremony @ 3pm</li>
+          <li style="margin-bottom: 6px;">Drinks - Prosecco</li>
+          <li style="margin-bottom: 6px;">Dinner @ 7pm</li>
+          <li style="margin-bottom: 6px;">Dessert - Cupcakes</li>
+        </ul>
+
+        <h3 style="font-size: 22px; margin-bottom: 8px;">Day 3</h3>
+        <ul style="margin-top: 0; padding-left: 20px;">
+          <li style="margin-bottom: 6px;">Breakfast: self-catered</li>
+          <li style="margin-bottom: 6px;">Rooms vacated by 10am</li>
+          <li style="margin-bottom: 6px;">Departure by 11am (cars parked onsite until 2pm)</li>
+        </ul>
       </div>
-      <h3 style="font-size: 22px; margin-bottom: 8px;">Day 2</h3>
-      <div style="margin-top: 0; padding-left: 0; list-style: none;">
-        <div style="margin-bottom: 6px;">Breakfast: self-catered</div>
-        <div style="margin-bottom: 6px;">Activities: face painting, care for the earth, site tour, temporary tattoos, slacklining, wishes with flowers</div>
-        <div style="margin-bottom: 6px;">Lunch @ 1pm</div>
-        <div style="margin-bottom: 6px;">Wedding Ceremony @ 3pm</div>
-        <div style="margin-bottom: 6px;">Drinks - Prosecco</div>
-        <div style="margin-bottom: 6px;">Dinner @ 7pm</div>
-        <div style="margin-bottom: 6px;">Dessert - Cupcakes</div>
-        <div style="margin-bottom: 6px;">Party! Outdoors till 10:30pm; Indoors till midnight</div>
-      </div>
-      <h3 style="font-size: 22px; margin-bottom: 8px;">Day 3</h3>
-      <div style="margin-top: 0; padding-left: 0; list-style: none;">
-        <div style="margin-bottom: 6px;">Breakfast: self-catered</div>
-        <div style="margin-bottom: 6px;">Rooms vacated by 10am</div>
-        <div style="margin-bottom: 6px;">Departure by 11am (cars parked onsite until 2pm)</div>
-      </div>
-      <button onclick="toggleSchedulePopup()" 
-              style="margin-top: 20px; 
-                    padding: 8px 16px; 
-                    border: none; 
-                    border-radius: 8px; 
-                    background-color: #333; 
-                    color: #fff; 
-                    cursor: pointer;
-                    font-family: 'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;
-                    font-size: 16px;">
-        Close
-      </button>
     </div>
   </section>
 
-  <section id="menu" style="text-align: center;">
-    <h2>Menu</h2>
-    <button id="menu-toggle" style="
-      background: #f8e8d0;
-      border: 2px solid #d4a373;
-      border-radius: 25px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      margin: 15px 0;
-      font-family: 'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;
-      transition: all 0.3s ease;
-    ">
-      🍽️ Click To Check Out Menu!
-    </button>
+  <section id="menu" style="position: relative; text-align: center; font-family: 'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif; background-image: url('./base.png'); background-size: cover; background-position: center; padding: 40px 20px; color: #000;">
+    <div style="background-color: rgba(248, 232, 208, 0.8); border-radius: 15px; padding: 20px; max-width: 600px; margin: 0 auto; border: 2px solid #d4a373;">
+      <h2 style="margin-top: 0;">Menu</h2>
+      <button id="menu-toggle" style="
+        background: #f8e8d0;
+        border: 2px solid #d4a373;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 15px 0;
+        font-family: 'Mystery Quest', 'Papyrus', 'Fantasy', sans-serif;
+        transition: all 0.3s ease;
+        ">
+        🍽️ Click To See Menu!
+      </button>
+
 
     <div id="menu-items" style="display: none; text-align: left; max-width: 500px; margin: 0 auto;">
       <h3>Friday</h3>
@@ -333,14 +298,22 @@
     }
   }, 1000);
 
-  function toggleSchedulePopup() {
-    const popup = document.getElementById('schedulePopup');
-    if (popup.style.display === 'block') {
-      popup.style.display = 'none';
+  document.getElementById('schedule-toggle').addEventListener('click', function() {
+    const scheduleItems = document.getElementById('schedule-items');
+    const button = this;
+    
+    if (scheduleItems.style.display === 'none') {
+      scheduleItems.style.display = 'block';
+      button.textContent = '▲ Hide Schedule';
+      button.style.background = '#d4a373';
+      button.style.color = 'white';
     } else {
-      popup.style.display = 'block';
+      scheduleItems.style.display = 'none';
+      button.textContent = '🍽️ Click To See Schedule!';
+      button.style.background = '#f8e8d0';
+      button.style.color = 'inherit';
     }
-  }
+  });
 
   document.getElementById('menu-toggle').addEventListener('click', function() {
     const menuItems = document.getElementById('menu-items');
